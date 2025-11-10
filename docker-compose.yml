@@ -1,0 +1,24 @@
+services:
+  n8n:
+    image: docker.n8n.io/n8nio/n8n:latest
+    ports:
+      - "5678:5678"
+    env_file: .env
+    environment:
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_HOST=${SUPABASE_HOST}
+      - DB_POSTGRESDB_PORT=${SUPABASE_PORT}
+      - DB_POSTGRESDB_DATABASE=${SUPABASE_DB}
+      - DB_POSTGRESDB_USER=${SUPABASE_USER}
+      - DB_POSTGRESDB_PASSWORD=${SUPABASE_PASSWORD}
+      - DB_POSTGRESDB_SCHEMA=public
+      - GENERIC_TIMEZONE=${GENERIC_TIMEZONE}
+      - TZ=${TZ}
+      - N8N_ENCRYPTION_KEY=my_local_key_123
+      - N8N_RUNNERS_ENABLED=true
+    volumes:
+      - n8n_data:/home/node/.n8n
+    sysctls:
+      - net.ipv6.conf.all.disable_ipv6=0
+volumes:
+  n8n_data:
