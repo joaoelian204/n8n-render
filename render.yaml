@@ -27,6 +27,10 @@ services:
         generateValue: true
       - key: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
         value: "false"
+      - key: N8N_BLOCK_ENV_ACCESS_IN_NODE
+        value: "false"
+      - key: N8N_GIT_NODE_DISABLE_BARE_REPOS
+        value: "true"
 
       # Configuración de la base de datos PostgreSQL (Supabase)
       # Mapea SUPABASE_* a DB_POSTGRESDB_* que n8n espera
