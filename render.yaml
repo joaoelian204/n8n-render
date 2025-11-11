@@ -23,10 +23,10 @@ services:
         value: America/Guayaquil
       - key: N8N_RUNNERS_ENABLED
         value: "true"
-      - key: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
-        value: "true"
       - key: N8N_ENCRYPTION_KEY
         generateValue: true
+      - key: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
+        value: "false"
 
       # Configuración de la base de datos PostgreSQL (Supabase)
       - key: DB_TYPE
