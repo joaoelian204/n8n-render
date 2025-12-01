@@ -3,7 +3,7 @@ name: Keep n8n & Supabase Alive
 on:
   schedule:
     # Se ejecuta cada 12 minutos (Render se duerme a los 15)
-    - cron: '*/12 * * * *'
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 jobs:
